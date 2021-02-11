@@ -1,0 +1,57 @@
+<!-- body section starts here -->
+<!-- <body> -->
+    <div class="bg">
+        <div class="jumbotron bg-info">
+          <h1 class="h1 text-center text-white animated bounce infinite">Welcome to Github Search</h1>
+          <hr class="my-4">
+          <p class="lead text-center">An app where users may enter a GitHub username and see names and descriptions of that person's public repositories. A person can also look for repositories.</p>
+        </div>
+        
+      
+        <!-- this is the section that contains the search form  -->
+        <div class="container">
+          <h4 class="text-center h4 text-white text-white">Check Out Github User Repositories Here!</h4>
+          <app-form (emitSearch)="searchRepo($event)"></app-form>
+          <hr>
+        </div>
+      
+      
+        <!-- This is the section for displaying user profiles -->
+       <h2 class="text-center h2 h2-responsive text-white animated swing delay-3s"> GITHUB REPOSITORIES </h2> 
+        <div class="container card-columns">
+          <div class="card" *ngFor="let gitrepo of gitrepos">
+            <div class="card">
+              <div class="card-header text-center blue-gradient text-white"><h2>{{gitrepo.name}}</h2></div>
+              <div class="card-body">
+                <p class="card-text"><strong>Description: </strong>{{gitrepo.description}}</p>
+                <p class="card-text"><strong>Create at: </strong>{{gitrepo.created_at|date}}</p>
+                <p class="card-text"> <strong>Language: </strong> {{gitrepo.language}}.</p>
+                <!-- Button -->
+                <a href="{{gitrepo.html_url}}" target="_blank" class="btn btn-info btn-lg btn-block">Check it on Github</a>
+              </div>
+              <div class="card-footer flex-footer">
+                <small class="text-muted"><strong>Branch: </strong>{{gitrepo.default_branch}} </small>
+                <small class="text-muted ml-4"><strong> Forks: </strong>{{gitrepo.forks_count}}</small>
+      
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      <!-- </body> -->
+      <!-- Footer section -->
+      <div class="">
+        <footer class="page-footer font-small blue">
+      
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">© 2021 Copyright:
+            <a href="https://twitter.com/TwiliBernice" target="_blank"> Bernice Twili</a>
+          </div>
+          <!-- Copyright -->
+      
+        </footer>
+      
+      
+      </div>
+      <!-- Footer -->
+      
