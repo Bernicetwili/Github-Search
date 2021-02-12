@@ -13,7 +13,7 @@ githubs:Github[];
   constructor(public Gitservice: GitserviceService) { }
 
   ngOnInit() {
-    this.searchGit("bernice");
+    this.searchGit("BerniceTwili");
   }
   searchGit(searchTerm){
     this.Gitservice.searchGithub(searchTerm).then(
